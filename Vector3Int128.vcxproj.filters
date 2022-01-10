@@ -15,19 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\ConsoleApplication1\AVX2Ext.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\ConsoleApplication1\vec3i128.cpp">
+    <ClCompile Include="vec3i128.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\ConsoleApplication1\Benchmark.cpp">
+    <ClCompile Include="Benchmark.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AVX2Ext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

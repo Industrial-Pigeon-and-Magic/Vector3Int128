@@ -140,14 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\ConsoleApplication1\AVX2Ext.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\ConsoleApplication1\Benchmark.cpp" />
-    <ClCompile Include="..\ConsoleApplication1\vec3i128.cpp" />
+    <ClCompile Include="Benchmark.cpp" />
+    <ClCompile Include="vec3i128.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AVX2Ext.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

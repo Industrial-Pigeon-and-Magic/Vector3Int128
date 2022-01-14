@@ -2,14 +2,21 @@
 #include <immintrin.h>
 #include "vec3i128.cpp"
 #include <benchmark/benchmark.h>
-
-namespace UniverseStructure
-{
+using namespace std;
     vec3i128 test1(5, 62, 15211253663,0);
     vec3i128 test2(55211, 6211, 1523663,0);
     __m256d zero = _mm256_setzero_pd();
-    __m256d Pos1e5 = _mm256_setr_pd(1e5, 1e5, 1e5, 1e5);
-    __m256d Neg3e38 = _mm256_setr_pd(-3e38, -3e38, -3e38, -3e38);
+    __m256d Pos1e5 = _mm256_set1_pd(1e5);
+    __m256d Dotzzzz1 = _mm256_set1_pd(0.000000000003);
+    __m256d Neg2p66 = _mm256_set1_pd(-73786976294838206464.1234567);
+    /*int main()
+    {
+        test1.SetDouble_Loss(Dotzzzz1);
+        cout << hex <<test1.upper.m256i_u64[1] <<endl;
+        cout << hex << test1.lower.m256i_u64[1] <<endl;
+        cout << test1.ToDouble_Loss().m256d_f64[1] <<endl;
+    }
+    */
     static void ConvertFromDouble_Zero(benchmark::State& state)
     {
         for (auto _ : state) {
@@ -38,13 +45,13 @@ namespace UniverseStructure
     static void ConvertFromDouble_Neg3e38(benchmark::State& state)
     {
         for (auto _ : state) {
-            test1.SetDouble_Loss(Neg3e38);
+            test1.SetDouble_Loss(Neg2p66);
         }
     }
     static void ConvertToDouble_Neg3e38(benchmark::State& state)
     {
         for (auto _ : state) {
-            Neg3e38 = test1.ToDouble_Loss();
+            Neg2p66 = test1.ToDouble_Loss();
         }
     }
     static void Add(benchmark::State& state)
@@ -71,4 +78,3 @@ BENCHMARK(Add);
 BENCHMARK(Subtract);
 //运行基准测试
 BENCHMARK_MAIN();
-}

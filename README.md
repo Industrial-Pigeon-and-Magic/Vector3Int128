@@ -1,7 +1,8 @@
 # Vector3Int128
- 使用AVX2指令集加速的128位整数三维向量结构体
-仅拥有加、减、从浮点转换、转换到浮点四种操作
-转换的浮点目前仅支持iee754-binary64
-由于AVX2指令集的限制,为了性能,转换浮点的数值范围目前为(-2^104, 2^104)(当然,这不代表它的表示范围)
-当然从目前用途来看这个范围限制无关紧要
-若支持AVX512可以解决这个问题,同时进一步提升运算速度
+
+128 bit integer 3D vector structure accelerated by avx2 instruction set
+There are only four operations: addition, subtraction, conversion from floating point and conversion to floating point
+The converted floating-point only supports iee754-binary64 at present
+Due to the limitation of avx2 instruction set, for performance, the numerical range of conversion floating point is (-2^104, 2^104) (of course, this does not represent its representation range)
+Of course, from the current use, this scope limit is irrelevant
+If avx512 is supported, this problem can be solved and the operation speed can be further improved
